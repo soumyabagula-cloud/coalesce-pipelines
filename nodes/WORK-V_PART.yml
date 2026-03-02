@@ -249,39 +249,7 @@ operation:
       - aliases:
           DIM_PART: 370ef266-eb08-4ebf-aa7b-56ca48341799
         customSQL:
-          customSQL: |-
-            {{ stage('Override Create SQL') }}
-            CREATE OR REPLACE VIEW {{ ref('V_SUPPLIER') }} AS
-            WITH FilteredSuppliers AS (
-                SELECT *
-                FROM {{ ref('DIM_SUPPLIER') }}
-                WHERE S_ACCTBAL > 0 -- Filter suppliers with positive account balance
-            ),
-            EnhancedSuppliers AS (
-                SELECT
-                    DIM_SUPPLIER_KEY,
-                    S_SUPPKEY,
-                    S_NAME,
-                    S_ADDRESS,
-                    S_NATIONKEY,
-                    S_PHONE,
-                    S_ACCTBAL,
-                    S_COMMENT,
-                    SYSTEM_VERSION,
-                    SYSTEM_CURRENT_FLAG,
-                    SYSTEM_START_DATE,
-                    SYSTEM_END_DATE,
-                    SYSTEM_CREATE_DATE,
-                    SYSTEM_UPDATE_DATE,
-                    CASE 
-                        WHEN S_ACCTBAL > 10000 THEN 'HIGH_BALANCE'
-                        WHEN S_ACCTBAL BETWEEN 5000 AND 10000 THEN 'MEDIUM_BALANCE'
-                        ELSE 'LOW_BALANCE'
-                    END AS BALANCE_CATEGORY
-                FROM FilteredSuppliers
-            )
-            SELECT *
-            FROM EnhancedSuppliers;
+          customSQL: ""
         dependencies:
           - locationName: WORK
             nodeName: DIM_PART
@@ -290,7 +258,7 @@ operation:
         name: V_PART
         noLinkRefs: []
   name: V_PART
-  overrideSQL: true
+  overrideSQL: false
   schema: ""
   sqlType: View
   type: sql
