@@ -1,0 +1,155 @@
+fileVersion: 1
+id: f60f751e-1de0-4aa4-8c33-449226425e3b
+name: DVSTG_REGION
+operation:
+  config:
+    contains_multiactive_data: false
+    generate_ghost_records: true
+  database: ""
+  deployEnabled: true
+  description: Region data as defined by TPC-H
+  isMultisource: false
+  locationName: WORK
+  materializationType: view
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 776e1c97-0819-4672-89f0-f07e1494eb3e
+          stepCounter: f60f751e-1de0-4aa4-8c33-449226425e3b
+        config: {}
+        dataType: STRING
+        defaultValue: ""
+        description: ""
+        hashDetails:
+          hashAlgorithm: SHA1
+        hashedColumns:
+          - columnCounter: f482fb4e-17fa-423c-b90c-161e729e9807
+            stepCounter: f60f751e-1de0-4aa4-8c33-449226425e3b
+        name: HK_REGION_H
+        nullable: true
+        sourceColumnReferences: []
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 919f6cb9-4386-48b4-840c-08330fb61b2d
+          stepCounter: f60f751e-1de0-4aa4-8c33-449226425e3b
+        config: {}
+        dataType: STRING
+        defaultValue: ""
+        description: ""
+        hashDetails:
+          hashAlgorithm: SHA1
+        hashedColumns:
+          - columnCounter: f482fb4e-17fa-423c-b90c-161e729e9807
+            stepCounter: f60f751e-1de0-4aa4-8c33-449226425e3b
+          - columnCounter: 3e5777cc-070b-41b7-98f1-134d3b7cf6da
+            stepCounter: f60f751e-1de0-4aa4-8c33-449226425e3b
+          - columnCounter: 9d9528b9-da1f-41c7-b9c2-0c40068a648d
+            stepCounter: f60f751e-1de0-4aa4-8c33-449226425e3b
+        name: HK_REGION_N_S
+        nullable: true
+        sourceColumnReferences: []
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: f482fb4e-17fa-423c-b90c-161e729e9807
+          stepCounter: f60f751e-1de0-4aa4-8c33-449226425e3b
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: R_REGIONKEY
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a2084e53-2672-4e7b-a285-7a0f5ea7bdde
+                stepCounter: 6ab816a5-c6ff-4cbf-a4c5-b7201e3ce1ae
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3e5777cc-070b-41b7-98f1-134d3b7cf6da
+          stepCounter: f60f751e-1de0-4aa4-8c33-449226425e3b
+        config: {}
+        dataType: VARCHAR(25)
+        description: ""
+        name: R_NAME
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: af7a3e85-4b45-4226-a42f-c8c382972d54
+                stepCounter: 6ab816a5-c6ff-4cbf-a4c5-b7201e3ce1ae
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9d9528b9-da1f-41c7-b9c2-0c40068a648d
+          stepCounter: f60f751e-1de0-4aa4-8c33-449226425e3b
+        config: {}
+        dataType: VARCHAR(152)
+        description: ""
+        name: R_COMMENT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6f11c064-20b1-4faf-aa0c-4846fb94e756
+                stepCounter: 6ab816a5-c6ff-4cbf-a4c5-b7201e3ce1ae
+            transform: ""
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a4fbb7ff-59e6-4a52-b472-dfb8919a2c2f
+          stepCounter: f60f751e-1de0-4aa4-8c33-449226425e3b
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: The Load Date Timestamp (LDTS) describes when this data first arrived in the Data Warehouse.
+        is_system_ldts: true
+        name: LDTS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: SYSDATE()
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: bd72d6b9-18b8-4b69-a9d5-f8f10515d443
+          stepCounter: f60f751e-1de0-4aa4-8c33-449226425e3b
+        config: {}
+        dataType: STRING
+        defaultValue: ""
+        description: The Record Source (RSRC) describes the source of this data.
+        is_system_rsrc: true
+        name: RSRC
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "{{record_source()}}"
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          REGION: 6ab816a5-c6ff-4cbf-a4c5-b7201e3ce1ae
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SAMPLE
+            nodeName: REGION
+        join:
+          joinCondition: FROM {{ ref('SAMPLE', 'REGION') }} "REGION"
+        name: DVSTG_REGION
+        noLinkRefs: []
+  name: DVSTG_REGION
+  overrideSQL: false
+  schema: ""
+  sqlType: Practice:::4
+  type: sql
+  version: 1
+type: Node

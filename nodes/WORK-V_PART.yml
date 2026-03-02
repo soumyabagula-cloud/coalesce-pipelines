@@ -1,0 +1,298 @@
+fileVersion: 1
+id: 5ccae897-a928-4359-b8c6-669cabadc80e
+name: V_PART
+operation:
+  config:
+    insertStrategy: UNION
+    selectDistinct: false
+  database: ""
+  deployEnabled: true
+  description: Part data as defined by TPC-H
+  isMultisource: false
+  locationName: WORK
+  materializationType: view
+  metadata:
+    appliedNodeTests:
+      - continueOnFailure: true
+        description: ""
+        name: Test
+        runOrder: After
+        templateString: ""
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3dd6cb1c-e6a2-4922-afd5-e201a03d01bf
+          stepCounter: 5ccae897-a928-4359-b8c6-669cabadc80e
+        config: {}
+        dataType: NUMBER
+        description: ""
+        name: DIM_PART_KEY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 74737bd4-30db-4e64-b623-a71f198dee5a
+                stepCounter: 370ef266-eb08-4ebf-aa7b-56ca48341799
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 756fbbd7-1c34-458c-870c-14aed53e1619
+          stepCounter: 5ccae897-a928-4359-b8c6-669cabadc80e
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: P_PARTKEY
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 64dddb66-d29d-436f-9ed8-313d225cdc3e
+                stepCounter: 370ef266-eb08-4ebf-aa7b-56ca48341799
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c8a31478-4b22-4bbb-9fe2-8f5b88774b26
+          stepCounter: 5ccae897-a928-4359-b8c6-669cabadc80e
+        config: {}
+        dataType: VARCHAR(55)
+        description: ""
+        name: P_NAME
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0cd14d18-df26-4b7c-b503-f0e2146e2107
+                stepCounter: 370ef266-eb08-4ebf-aa7b-56ca48341799
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0bd17449-4bc6-42be-9dbd-7ce993f460db
+          stepCounter: 5ccae897-a928-4359-b8c6-669cabadc80e
+        config: {}
+        dataType: VARCHAR(25)
+        description: ""
+        name: P_MFGR
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e6e79d42-fa1c-4d92-84c3-899ac80dbc26
+                stepCounter: 370ef266-eb08-4ebf-aa7b-56ca48341799
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3f1fb0f8-f943-45c3-a67c-9bee06e01a31
+          stepCounter: 5ccae897-a928-4359-b8c6-669cabadc80e
+        config: {}
+        dataType: VARCHAR(10)
+        description: ""
+        name: P_BRAND
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 099a5ddd-147e-4e88-90db-5e8160739e71
+                stepCounter: 370ef266-eb08-4ebf-aa7b-56ca48341799
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 28b6f819-ce56-4854-86ee-ea03c56b8866
+          stepCounter: 5ccae897-a928-4359-b8c6-669cabadc80e
+        config: {}
+        dataType: VARCHAR(25)
+        description: ""
+        name: P_TYPE
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4181f0fa-5b7f-475a-ab27-356bfc520acc
+                stepCounter: 370ef266-eb08-4ebf-aa7b-56ca48341799
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 059fde50-6c8c-4270-a62a-4e8b5af32067
+          stepCounter: 5ccae897-a928-4359-b8c6-669cabadc80e
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: P_SIZE
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5ed9821b-31dd-4b2e-a0e8-b5ac46fb73ab
+                stepCounter: 370ef266-eb08-4ebf-aa7b-56ca48341799
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e544a1d3-0cc7-428a-b73c-fa3bf2174bf2
+          stepCounter: 5ccae897-a928-4359-b8c6-669cabadc80e
+        config: {}
+        dataType: VARCHAR(10)
+        description: ""
+        name: P_CONTAINER
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3595971f-6733-4d79-8d37-d7c148540800
+                stepCounter: 370ef266-eb08-4ebf-aa7b-56ca48341799
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6dcaac8d-7a3e-4a20-a8ef-59a6e4d2c302
+          stepCounter: 5ccae897-a928-4359-b8c6-669cabadc80e
+        config: {}
+        dataType: NUMBER(12,2)
+        description: ""
+        name: P_RETAILPRICE
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 694707d4-99f9-4436-98b6-686337bcab42
+                stepCounter: 370ef266-eb08-4ebf-aa7b-56ca48341799
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 71896c04-d931-439e-8a1f-1d9772bfe5f8
+          stepCounter: 5ccae897-a928-4359-b8c6-669cabadc80e
+        config: {}
+        dataType: VARCHAR(23)
+        description: ""
+        name: P_COMMENT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 50686f78-db52-491c-8148-412ff416270c
+                stepCounter: 370ef266-eb08-4ebf-aa7b-56ca48341799
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: ba4c170c-a7b4-4f2d-8406-7edd8d1a4098
+          stepCounter: 5ccae897-a928-4359-b8c6-669cabadc80e
+        config: {}
+        dataType: NUMBER
+        description: ""
+        name: SYSTEM_VERSION
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e18d4411-c3a2-4eb4-9fcb-53d6915f7631
+                stepCounter: 370ef266-eb08-4ebf-aa7b-56ca48341799
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: a943184b-4d1d-445a-9efa-ce61b794e193
+          stepCounter: 5ccae897-a928-4359-b8c6-669cabadc80e
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: SYSTEM_CURRENT_FLAG
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 53ffb2d1-df9e-4706-9eaf-b701af967271
+                stepCounter: 370ef266-eb08-4ebf-aa7b-56ca48341799
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9248b83c-2df6-4ed8-af74-e1b38924b18a
+          stepCounter: 5ccae897-a928-4359-b8c6-669cabadc80e
+        config: {}
+        dataType: TIMESTAMP
+        description: ""
+        name: SYSTEM_START_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0b7921e9-53bb-442b-b85e-a0a21f53f680
+                stepCounter: 370ef266-eb08-4ebf-aa7b-56ca48341799
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8f57502b-4d9a-45f8-b95b-b9f767cc26ef
+          stepCounter: 5ccae897-a928-4359-b8c6-669cabadc80e
+        config: {}
+        dataType: TIMESTAMP
+        description: ""
+        name: SYSTEM_END_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e8784f51-4ad7-402c-a592-42d3a0d265a8
+                stepCounter: 370ef266-eb08-4ebf-aa7b-56ca48341799
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8440754c-d39d-4268-b7a8-2883d8637a63
+          stepCounter: 5ccae897-a928-4359-b8c6-669cabadc80e
+        config: {}
+        dataType: TIMESTAMP
+        description: ""
+        name: SYSTEM_CREATE_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 33a29134-5bcf-42d3-8456-4c0a5c319643
+                stepCounter: 370ef266-eb08-4ebf-aa7b-56ca48341799
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 51a94265-a34e-40c6-9ec0-4bd5bda1f421
+          stepCounter: 5ccae897-a928-4359-b8c6-669cabadc80e
+        config: {}
+        dataType: TIMESTAMP
+        description: ""
+        name: SYSTEM_UPDATE_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f79e3b7c-ef7d-4f2d-b10e-e564463b6581
+                stepCounter: 370ef266-eb08-4ebf-aa7b-56ca48341799
+            transform: ""
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          DIM_PART: 370ef266-eb08-4ebf-aa7b-56ca48341799
+        customSQL:
+          customSQL: |-
+            {{ stage('Override Create SQL') }}
+            CREATE OR REPLACE VIEW {{ ref('V_SUPPLIER') }} AS
+            WITH FilteredSuppliers AS (
+                SELECT *
+                FROM {{ ref('DIM_SUPPLIER') }}
+                WHERE S_ACCTBAL > 0 -- Filter suppliers with positive account balance
+            ),
+            EnhancedSuppliers AS (
+                SELECT
+                    DIM_SUPPLIER_KEY,
+                    S_SUPPKEY,
+                    S_NAME,
+                    S_ADDRESS,
+                    S_NATIONKEY,
+                    S_PHONE,
+                    S_ACCTBAL,
+                    S_COMMENT,
+                    SYSTEM_VERSION,
+                    SYSTEM_CURRENT_FLAG,
+                    SYSTEM_START_DATE,
+                    SYSTEM_END_DATE,
+                    SYSTEM_CREATE_DATE,
+                    SYSTEM_UPDATE_DATE,
+                    CASE 
+                        WHEN S_ACCTBAL > 10000 THEN 'HIGH_BALANCE'
+                        WHEN S_ACCTBAL BETWEEN 5000 AND 10000 THEN 'MEDIUM_BALANCE'
+                        ELSE 'LOW_BALANCE'
+                    END AS BALANCE_CATEGORY
+                FROM FilteredSuppliers
+            )
+            SELECT *
+            FROM EnhancedSuppliers;
+        dependencies:
+          - locationName: WORK
+            nodeName: DIM_PART
+        join:
+          joinCondition: FROM {{ ref('WORK', 'DIM_PART') }} "DIM_PART"
+        name: V_PART
+        noLinkRefs: []
+  name: V_PART
+  overrideSQL: true
+  schema: ""
+  sqlType: View
+  type: sql
+  version: 1
+type: Node

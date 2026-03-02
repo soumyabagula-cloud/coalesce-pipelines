@@ -1,0 +1,125 @@
+fileVersion: 1
+id: 80df015f-dc53-45ec-b242-d53288a009db
+name: SATV0_REGION
+operation:
+  config:
+    disable_hwm: false
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+  database: ""
+  deployEnabled: true
+  description: Region data as defined by TPC-H
+  isMultisource: false
+  locationName: WORK
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1c0b465e-cd8c-4791-9eea-36113832311f
+          stepCounter: 80df015f-dc53-45ec-b242-d53288a009db
+        config:
+          is_hk: true
+        dataType: STRING
+        description: ""
+        name: HK_REGION_H
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 776e1c97-0819-4672-89f0-f07e1494eb3e
+                stepCounter: f60f751e-1de0-4aa4-8c33-449226425e3b
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: fa3636a0-4a8f-478e-aaf3-616cd38c7373
+          stepCounter: 80df015f-dc53-45ec-b242-d53288a009db
+        config:
+          is_hd: true
+        dataType: STRING
+        description: ""
+        name: HK_REGION_N_S
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 919f6cb9-4386-48b4-840c-08330fb61b2d
+                stepCounter: f60f751e-1de0-4aa4-8c33-449226425e3b
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b02d2a38-b5f2-4b79-865f-a295749ab055
+          stepCounter: 80df015f-dc53-45ec-b242-d53288a009db
+        config: {}
+        dataType: STRING
+        description: The Record Source (RSRC) describes the source of this data.
+        name: RSRC
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bd72d6b9-18b8-4b69-a9d5-f8f10515d443
+                stepCounter: f60f751e-1de0-4aa4-8c33-449226425e3b
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: ddf96861-884c-4d4d-b0f9-1f50e132038b
+          stepCounter: 80df015f-dc53-45ec-b242-d53288a009db
+        config: {}
+        dataType: TIMESTAMP
+        description: The Load Date Timestamp (LDTS) describes when this data first arrived in the Data Warehouse.
+        name: LDTS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a4fbb7ff-59e6-4a52-b472-dfb8919a2c2f
+                stepCounter: f60f751e-1de0-4aa4-8c33-449226425e3b
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 274d7342-98d8-43ab-b0f6-c4f601293773
+          stepCounter: 80df015f-dc53-45ec-b242-d53288a009db
+        config: {}
+        dataType: VARCHAR(152)
+        description: ""
+        name: R_COMMENT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9d9528b9-da1f-41c7-b9c2-0c40068a648d
+                stepCounter: f60f751e-1de0-4aa4-8c33-449226425e3b
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2ba74814-279a-46bb-94bf-bdf86b14789b
+          stepCounter: 80df015f-dc53-45ec-b242-d53288a009db
+        config: {}
+        dataType: VARCHAR(25)
+        description: ""
+        name: R_NAME
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3e5777cc-070b-41b7-98f1-134d3b7cf6da
+                stepCounter: f60f751e-1de0-4aa4-8c33-449226425e3b
+            transform: ""
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          DVSTG_REGION: f60f751e-1de0-4aa4-8c33-449226425e3b
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WORK
+            nodeName: DVSTG_REGION
+        join:
+          joinCondition: FROM {{ ref('WORK', 'DVSTG_REGION') }} "DVSTG_REGION"
+        name: SATV0_REGION
+        noLinkRefs: []
+  name: SATV0_REGION
+  overrideSQL: false
+  schema: ""
+  sqlType: Practice:::8
+  type: sql
+  version: 1
+type: Node

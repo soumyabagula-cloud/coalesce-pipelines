@@ -1,0 +1,127 @@
+fileVersion: 1
+id: e506edfd-13f3-48d2-8d13-1e4cc4d2175d
+name: DVSTG_NATION
+operation:
+  config:
+    contains_multiactive_data: false
+    generate_ghost_records: true
+  database: ""
+  deployEnabled: true
+  description: Nation data as defined by TPC-H
+  isMultisource: false
+  locationName: WORK
+  materializationType: view
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1f668b05-24a0-484a-a5b3-f83d7b58d005
+          stepCounter: e506edfd-13f3-48d2-8d13-1e4cc4d2175d
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: N_NATIONKEY
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 65935698-ff04-44e0-9cd0-bc57825714e9
+                stepCounter: 4385bc89-84ed-42e2-929c-6c4017c2e0fe
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2b6df0fb-2469-4491-a1b8-1113d859c2fe
+          stepCounter: e506edfd-13f3-48d2-8d13-1e4cc4d2175d
+        config: {}
+        dataType: VARCHAR(25)
+        description: ""
+        name: N_NAME
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b67b0918-754b-49f5-99b3-b2dc5a207f9b
+                stepCounter: 4385bc89-84ed-42e2-929c-6c4017c2e0fe
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: a9c0ce51-cc40-4eed-872c-86cf4bdc53db
+          stepCounter: e506edfd-13f3-48d2-8d13-1e4cc4d2175d
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: N_REGIONKEY
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: afc481b7-285c-447e-a265-b930989a2a3f
+                stepCounter: 4385bc89-84ed-42e2-929c-6c4017c2e0fe
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: d1d87f1a-c301-47b5-90a1-b3d287139e1c
+          stepCounter: e506edfd-13f3-48d2-8d13-1e4cc4d2175d
+        config: {}
+        dataType: VARCHAR(152)
+        description: ""
+        name: N_COMMENT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ac562589-95c7-4c16-ad7a-93f957d2a2e5
+                stepCounter: 4385bc89-84ed-42e2-929c-6c4017c2e0fe
+            transform: ""
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: cc375f6d-db4b-415e-b0dc-a7c4c104bdc6
+          stepCounter: e506edfd-13f3-48d2-8d13-1e4cc4d2175d
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: The Load Date Timestamp (LDTS) describes when this data first arrived in the Data Warehouse.
+        is_system_ldts: true
+        name: LDTS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: SYSDATE()
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6e13248f-505b-433d-8951-78aa18d39ea1
+          stepCounter: e506edfd-13f3-48d2-8d13-1e4cc4d2175d
+        config: {}
+        dataType: STRING
+        defaultValue: ""
+        description: The Record Source (RSRC) describes the source of this data.
+        is_system_rsrc: true
+        name: RSRC
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "{{record_source()}}"
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          NATION: 4385bc89-84ed-42e2-929c-6c4017c2e0fe
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SAMPLE
+            nodeName: NATION
+        join:
+          joinCondition: FROM {{ ref('SAMPLE', 'NATION') }} "NATION"
+        name: DVSTG_NATION
+        noLinkRefs: []
+  name: DVSTG_NATION
+  overrideSQL: false
+  schema: ""
+  sqlType: Practice:::4
+  type: sql
+  version: 1
+type: Node

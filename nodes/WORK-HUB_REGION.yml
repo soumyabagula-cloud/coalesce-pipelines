@@ -1,0 +1,96 @@
+fileVersion: 1
+id: 066fef83-6853-488b-b6ab-24463ccac346
+name: HUB_REGION
+operation:
+  config:
+    disable_hwm: true
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+  database: ""
+  deployEnabled: true
+  description: Region data as defined by TPC-H
+  isMultisource: false
+  locationName: WORK
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 00b2816b-486b-46c7-8162-6878157119c9
+          stepCounter: 066fef83-6853-488b-b6ab-24463ccac346
+        config:
+          is_Hub_hk: true
+        dataType: STRING
+        description: ""
+        name: HK_REGION_H
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 776e1c97-0819-4672-89f0-f07e1494eb3e
+                stepCounter: f60f751e-1de0-4aa4-8c33-449226425e3b
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: ee458b30-c2d6-4c9a-8d32-9b96cca69732
+          stepCounter: 066fef83-6853-488b-b6ab-24463ccac346
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: R_REGIONKEY
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f482fb4e-17fa-423c-b90c-161e729e9807
+                stepCounter: f60f751e-1de0-4aa4-8c33-449226425e3b
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: fe0e38a1-5e99-4593-a8ac-f7bba0258b0f
+          stepCounter: 066fef83-6853-488b-b6ab-24463ccac346
+        config: {}
+        dataType: TIMESTAMP
+        description: The Load Date Timestamp (LDTS) describes when this data first arrived in the Data Warehouse.
+        name: LDTS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a4fbb7ff-59e6-4a52-b472-dfb8919a2c2f
+                stepCounter: f60f751e-1de0-4aa4-8c33-449226425e3b
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 77cfac06-8fc3-4d3f-89a7-ae9d19df2272
+          stepCounter: 066fef83-6853-488b-b6ab-24463ccac346
+        config: {}
+        dataType: STRING
+        description: The Record Source (RSRC) describes the source of this data.
+        name: RSRC
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bd72d6b9-18b8-4b69-a9d5-f8f10515d443
+                stepCounter: f60f751e-1de0-4aa4-8c33-449226425e3b
+            transform: ""
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          DVSTG_REGION: f60f751e-1de0-4aa4-8c33-449226425e3b
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WORK
+            nodeName: DVSTG_REGION
+        join:
+          joinCondition: FROM {{ ref('WORK', 'DVSTG_REGION') }} "DVSTG_REGION"
+        name: HUB_REGION
+        noLinkRefs: []
+  name: HUB_REGION
+  overrideSQL: false
+  schema: ""
+  sqlType: Practice:::6
+  type: sql
+  version: 1
+type: Node
